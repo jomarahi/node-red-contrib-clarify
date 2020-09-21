@@ -18,6 +18,7 @@ module.exports = function (RED) {
                 var location = RED.util.getObjectProperty(msg.payload, "location");
                 var sourceType = RED.util.getObjectProperty(msg.payload, "sourceType") || "measurement";
                 var createItem = RED.util.getObjectProperty(msg.payload, "createItem");
+                var annotations = RED.util.getObjectProperty(msg.payload, "annotations") || {};
             } catch (error) {
                 throw (error);
             };
@@ -31,6 +32,7 @@ module.exports = function (RED) {
                 "enumValues": enumValues,
                 "engUnit": engUnit,
                 "location": location || [],
+                "annotations": annotations
             };
             let signal = {
                 "id": signalID,
@@ -180,7 +182,8 @@ module.exports = function (RED) {
             _.isEqual(obj1.common.name, obj2.common.name) &&
             _.isEqual(obj1.common.enumValues, obj2.common.enumValues) &&
             _.isEqual(obj1.common.engUnit, obj2.common.engUnit) &&
-            _.isEqual(obj1.common.location, obj2.common.location)
+            _.isEqual(obj1.common.location, obj2.common.location) &&
+            _.isEqual(obj1.common.annotations, obj2.common.annotations)
     }
 
     RED.nodes.registerType("ensure-multiple", ClarifyEnsureMultipleNode);
