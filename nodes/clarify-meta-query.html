@@ -1,0 +1,37 @@
+<script type="text/html" data-template-name="meta-query">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+  <div class="form-row">
+    <label for="node-input-apiRef"><i class="icon-tag"></i> API</label>
+    <input type="text" id="node-input-apiRef" placeholder="API Endpoint">
+  </div>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType("meta-query", {
+        category: "Clarify",
+        color: "#00FF75",
+        defaults: {
+            name: { value: "" },
+            apiRef: { value: null, type: "clarify-api" },
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "clarify.png",
+        label: function () {
+            return this.name || "meta-query";
+        },
+        oneditprepare: function () {
+           
+        },
+        oneditsave: function () {
+            
+        }
+    });
+</script>
+
+<script type="text/html" data-help-name="meta-query">
+    <p>Clarify API meta</p>
+</script>

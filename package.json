@@ -29,6 +29,7 @@
     "nodes": {
       "clarify-add-data": "nodes/clarify-add-data.js",
       "clarify-api": "nodes/clarify-api.js",
+      "clarify-meta-query": "nodes/clarify-meta-query.js",
       "clarify-ensure-signal": "nodes/clarify-ensure-signal.js",
       "clarify-ensure-multiple": "nodes/clarify-ensure-multiple.js",
       "clarify-inject-enums": "nodes/clarify-inject-enums.js",
